@@ -4,12 +4,21 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
+  min-height: rem(292);
   @media (min-width: 768px) {
     margin-bottom: 5rem;
   }
+  
   &__img {
     width: 100%;
+    @media (min-width: 480px) {
+      width: unset;
+    }
+    @media (min-width:1024px) {
+      width: auto;
+    }
     height: auto;
+    max-height: 100%;
     position: relative;
     transition: $hover-transition;
     transform: translateZ(8px);
@@ -17,7 +26,8 @@
     &--right {
       margin-left: auto;
       max-width: rem(317);
-      top: 0;
+      top: 2rem;
+      margin-top: -2rem;
       @media (min-width:480px) {
         top: rem(20);
       }
@@ -31,7 +41,17 @@
     }
     &--left {
       max-width: rem(367);
-      bottom: rem(30);
+      top: rem(17.5);
+      margin-top: -5rem;
+      @media (min-width: 375px) {
+       margin-top: -6rem;
+      }         
+      @media (min-width: 1200px) {
+       margin-top: -7rem;
+      }      
+      @media (min-width: 1200px) {
+        bottom: .5rem;
+      }    
       right: rem(42);
     }
   }
@@ -46,17 +66,22 @@
       margin-bottom: rem(24);
       flex: 0 1 calc(50% - #{$gutter} * 2);
     }
+    @media (min-width: 1200px) {
+      height: rem(292);
+    }
     flex-direction: column;
     padding: rem(40) rem(30);
+    padding-bottom: 0;
     box-sizing: border-box;
-    height: rem(292);
-    position: relative;
-    &:hover {
-      transform: translateX(0) translateY(-1px);
-      box-shadow: 2px 4px 5px rgba(20, 19, 20, .25);
-      cursor: default;
-      .service__img {
-        transform: scale(1.01);
+    //height: rem(292);
+    @media (min-width: 768px) {
+      &:hover {
+        transform: translateX(0) translateY(-1px);
+        box-shadow: 2px 4px 5px rgba(20, 19, 20, .25);
+        cursor: default;
+        .service__img {
+          transform: scale(1.01);
+        }
       }
 
     }
@@ -80,10 +105,10 @@
   }
 
   &__desc {
-    font-size: rem(12);
+    font-size: rem(13);
     line-height: rem(20);
     margin-bottom: rem(40);
-      white-space: unset;
+    white-space: unset;
   }
 
   &__link {

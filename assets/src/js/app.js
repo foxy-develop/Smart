@@ -13,7 +13,7 @@ const notification = ( siiimpleToast =
         position: "top-center",
         margin: 10,
         delay: 0,
-        duration: 5000,
+        duration: 3000,
         delay: 0
       })
     : siiimpleToast.setOptions({
@@ -22,12 +22,12 @@ const notification = ( siiimpleToast =
         position: "top-right",
         margin: 10,
         delay: 0,
-        duration: 5000,
+        duration: 3000,
         delay: 0
       }));
 
 if (document.querySelectorAll('.form').length) {
-
+  
   //form validate
   const formValidate = form => {
     const email = form.querySelector('input[name="mail"]');
@@ -42,7 +42,7 @@ if (document.querySelectorAll('.form').length) {
     //validate
     validateEmail(email.value) ? success(email) : error(email);
     subject.value.length > 5 ? success(subject) : error(subject);
-    msg.value.length > 60 ? success(msg) : error(msg);
+    msg.value.length >= 60 ? success(msg) : error(msg);
 
     return !form.querySelectorAll(".form__group--error").length;
   };
@@ -53,10 +53,10 @@ if (document.querySelectorAll('.form').length) {
     event.preventDefault();
     const form = this.closest('.form');
     if (formValidate(form)) {
-      form.submit();
       notification.success(
         `Ваше сообщение успешно отправлено! В ближайшее время с Вами свяжется наш сотрудник. Благодарим за доверие.`
       );
+      form.submit();
     } else {
         notification.alert(`При заполнении формы были допущены ошибки. Пожалуйста перепроверьте введенные данные`);
     }
@@ -70,14 +70,31 @@ if (document.querySelectorAll('.form').length) {
     })
 
 
-  document.querySelector('input[name="subject"]').addEventListener("change", function() {
-    this.value.length > 5 && this.closest(".form__group").classList.add("form__group--success");
+  document.querySelector('input[name="subject"]').addEventListener("input", function() {
+    this.value.length > 5
+      ? this.closest(".form__group").classList.add("form__group--success")
+      : this.closest(".form__group").classList.remove("form__group--success");
   });
 
-  document.querySelector('input[name="mail"]').addEventListener("change", function() {
-    validateEmail(this.value) && this.closest(".form__group").classList.add("form__group--success");
+  document.querySelector('input[name="mail"]').addEventListener("input", function() {
+    validateEmail(this.value)
+      ? this.closest(".form__group").classList.add("form__group--success")
+      : this.closest(".form__group").classList.remove("form__group--success");
   });
 
+
+  //counter 
+  const counter = el => {
+    const wrapper = el.closest('.form__group').querySelector('.counter');
+    const edge = wrapper.querySelector(".counter__edge").innerText * 1;
+    let current = wrapper.querySelector(".counter__current");
+    let length = el.value.length;
+
+    current.innerText = (length <= edge) ? length : edge;
+    wrapper.classList.add('active');
+
+    return length >= edge
+  }
   document
     .querySelector(".form")
     .querySelector("textarea")
@@ -85,11 +102,12 @@ if (document.querySelectorAll('.form').length) {
       this.closest(".form__group").classList.remove("form__group--error");
     });
 
-  document
-    .querySelector(".form")
-    .querySelector("textarea")
-    .addEventListener("chnage", function() {
-      this.value.length > 60 && this.closest(".form__group").classList.add("form__group--success");
+  document.querySelector(".form").querySelector("textarea")
+    .addEventListener("input", function() {
+      let container = this.closest('.form__group');
+      counter(this)
+        ? container.classList.add("form__group--success")
+        : container.classList.remove("form__group--success");
     });
 
   const inputs = document.querySelectorAll(".form__field");

@@ -3,11 +3,10 @@
   font-size: rem(14);
   letter-spacing: .7px;
   text-transform: uppercase;
-  align-items: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: fixed;
-  min-height: calc(100vh - 8rem);
+  min-height: 100vh;
   width: 100%;
   line-height: 4.5;
   font-size: rem(20);
@@ -19,7 +18,7 @@
   transform: translateX(100%);
   transition: $hover-transition;
   box-sizing: border-box;
-
+  padding-top: 3rem;
   @media (min-width: 768px) { 
     min-height: 100vh;
     top: 0;
@@ -100,6 +99,7 @@
 
   &.navbar--active {
     transform: translateX(0);
+    overflow: hidden;
   }
 
 }

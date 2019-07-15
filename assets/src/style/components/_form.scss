@@ -45,6 +45,10 @@
       }
     }
     &--success {
+      .counter {
+        color: rgb(139, 195, 74);
+        font-weight: 600;
+      }
       .form__field {
         border-color: rgb(139, 195, 74);
         &:focus {
@@ -104,7 +108,7 @@
   }
   &__textarea {
     margin-top: rem(5);
-    padding: rem(14) rem(16);
+    padding: rem(20) rem(16);
     border: 1px solid $main;
     border-radius: 6px;
     
@@ -116,3 +120,17 @@
 
 
 
+.counter {
+  position: absolute;
+  opacity: 0;
+  font-size: 12px;
+  top: 28px;
+  right: 6px;
+  border-radius: 12px;
+  color: $dark;
+  font-weight: 400;
+  transition: $hover-transition;
+  &.active {
+    opacity: 1;
+  }
+}
