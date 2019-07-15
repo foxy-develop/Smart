@@ -349,7 +349,10 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   background: #f5f5f5;
-  margin-top: 10rem
+  margin-top: 10rem;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1
 }
 @media (min-width:1024px) {
   .main {
@@ -901,7 +904,7 @@ body {
   height: .4rem;
   right: 0;
   background: #e82127;
-  transition: .3s ease-in-out
+  transition: all .3s cubic-bezier(.175,.885,.32,1.275)
 }
 .nav-btn span {
   top: calc(50% - 2px)
@@ -1557,8 +1560,7 @@ body {
   height: 9rem;
   border-top: 1px solid #e82127;
   border-bottom: 1px solid #e82127;
-  box-sizing: border-box;
-  margin-top: auto
+  box-sizing: border-box
 }
 .footer .container {
   -webkit-flex-direction: column;
@@ -1729,6 +1731,9 @@ body {
     margin: 0 3rem;
     margin-bottom: 2.4rem
   }
+}
+.contact {
+  margin: auto 0
 }
 .contact .container {
   -webkit-flex-direction: column;

@@ -2,6 +2,7 @@
   .container {
     flex-direction: column;
   }
+  margin: auto 0;
   &__title {
     font-family: $font-medium;
     font-size: rem(28);
