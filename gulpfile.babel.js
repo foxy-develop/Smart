@@ -106,17 +106,7 @@ gulp.task(
       .pipe(plumber()) // для отслеживания ошибок
       .pipe(sass()) // scss -> css
       .pipe(sourcemaps.init()) // инициализируем sourcemap
-      .pipe(autoprefixer({ browsers: [    
-          'ie >= 10',
-          'ie_mob >= 10',
-          'ff >= 30',
-          'chrome >= 34',
-          'safari >= 7',
-          'opera >= 23',
-          'ios >= 7',
-          'android >= 4.4',
-          'bb >= 10'
-        ]}))
+      .pipe(autoprefixer())
       .pipe(cleanCSS({ format: "beautify" }))
       .pipe(gulp.dest(path.build.css))
       .pipe(rename({ suffix: ".min" }))
