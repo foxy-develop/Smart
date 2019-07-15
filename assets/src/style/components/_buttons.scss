@@ -1,0 +1,34 @@
+.btn {
+  outline: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: rem(16);
+  line-height: rem(28);
+  font-family: $font-regular;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  border: 2px solid;
+  height: rem(45);
+  padding: 0 rem(65);
+  max-width: 100%;
+  box-shadow: 2px 4px 6px 1px rgba($dark, .15);
+  transition: $hover-transition;
+  :hover {
+    cursor: pointer;
+  }
+  &--main {
+    background: $main;
+    border-color: $main;
+    color: #fff;
+    box-shadow: 2px 4px 6px 1px rgba($main, .15);
+    &:visited, &:active {
+      color: #fff;
+    }
+    &:hover {
+      background: $main;
+      color: #fff;
+      box-shadow: 3px 5px 6px 1px rgba($main, .25);
+    }
+  }
+}

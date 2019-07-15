@@ -1,0 +1,54 @@
+//Mixins
+
+@mixin flex($direction: row, $justify: center, $position: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $position;
+  justify-content: $justify;
+}
+
+
+@function rem($px) {
+  @return $px / 10 * 1rem;
+}
+
+@function em($px) {
+  @return $px / 10 * 1em;
+}
+
+// Variables
+
+// Color system
+
+$white: #f5f3f3;
+$grey: #f5f5f5;
+$dark: #333333;
+$main: #e82127;
+
+// Typography
+
+$font: 'GothamProLight', Arial, sans-serif;
+$font-bold: 'GothamProBold', Arial, sans-serif;
+$font-regular: 'GothamProRegular', Arial, sans-serif;
+$font-medium: 'GothamProMedium', Arial, sans-serif;
+$font-size: rem(12);
+$line-height: rem(20);
+$bold: 700;
+
+//Transition
+
+$hover-transition: 0.3s ease-in-out;
+$input-transition: color 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06),
+  border-color 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06),
+  box-shadow 250ms cubic-bezier(0.27, 0.01, 0.38, 1.06);
+
+//borders
+
+$border-regular: 1px solid $main;
+
+//Layout
+
+$container-width: rem(1170);
+$gutter: rem(15);
+
+$header-height: rem(100);

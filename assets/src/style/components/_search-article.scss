@@ -1,0 +1,106 @@
+.search-article {
+  .container {
+    flex-direction: column;
+    @media (min-width:768px) {
+      flex-direction: row;
+    }   
+  }
+  &--col {
+    .container {
+      flex-direction: column;
+    }
+    .search-article__text {
+      width: 100%;
+      text-align: center;
+      color: $main;    
+    }
+  }
+  &__search {
+      flex-grow: 1;
+  }
+
+  &__form {
+    flex-grow: 1;
+    background: rgb(232, 34, 39);
+    padding: 18px 15px;
+  }
+  &__title {
+    max-height: rem(68);
+    flex: 0 0 rem(165);
+    font-family: $font-medium;
+    font-size: rem(18);
+    line-height: rem(24);
+    text-transform: uppercase;
+    text-align: left;
+    align-items: center;
+    font-weight: 600;
+  }
+  &__text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    @media (min-width:768px) {
+      width: rem(80);
+      margin-bottom: 0;
+    }
+  }
+  &__btn {
+    flex: 0 1 rem(50);
+    @media (min-width:768px) {
+      flex: 0 1 67.5px;
+    }
+    align-items: center;
+    justify-content: center;
+    padding: 0 rem(10);
+    height: rem(32);
+    width: rem(67.5);
+    fill: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    position: relative;
+    outline: 0;
+    cursor: pointer;
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    svg {
+        height: rem(22);
+        width: rem(22);      
+      @media (min-width:768px) {
+        height: rem(29);
+        width: rem(29);
+      }
+      transition: $hover-transition;
+    }
+    &:hover {
+      svg {
+        transform: scale(1.05) rotateY(180deg);
+      }
+    }
+  }
+
+  &__input {
+    flex-grow: 1;
+    background: transparent;
+    font-size: rem(14);
+    @media (min-width:768px) {
+      font-size: rem(16);
+    }
+    font-family: $font-regular;
+    transition: $hover-transition;
+    outline: none;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 0 1.5rem;
+    &::placeholder {
+      transition: $hover-transition;
+      color: #fff;
+      opacity: .5;
+    }
+    &:focus {
+      background: #fff;
+      &::placeholder {
+        color: #000;
+        opacity: .5;
+      }      
+    }
+  }
+}

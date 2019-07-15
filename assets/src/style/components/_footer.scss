@@ -1,0 +1,26 @@
+.footer {
+  height: rem(90);
+  border-top: 1px solid $main;
+  border-bottom: 1px solid $main;
+  box-sizing: border-box;
+  margin-top: auto;
+  .container {
+    flex-direction: column;
+    @media (min-width:768px) {
+      flex-direction: row;
+    }
+  }
+  &__logo {
+    margin: auto;
+    align-items: center;
+    order: 2;
+    height: rem(45);
+    @media (min-width: 768px) {
+      order: 1;
+      margin-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      height: auto;
+    }
+  }
+}

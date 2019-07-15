@@ -1,0 +1,104 @@
+.service {
+  flex-wrap: wrap;
+  max-width: rem(1170);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  @media (min-width: 768px) {
+    margin-bottom: 5rem;
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    transition: $hover-transition;
+    transform: translateZ(8px);
+    perspective: 5px;
+    &--right {
+      margin-left: auto;
+      max-width: rem(317);
+      top: 0;
+      @media (min-width:480px) {
+        top: rem(20);
+      }
+      @media (min-width:768px) {
+        top: 1vw;
+      }
+      @media (min-width:1024px) {
+        top: rem(20);
+      }
+      left: rem(45);
+    }
+    &--left {
+      max-width: rem(367);
+      bottom: rem(30);
+      right: rem(42);
+    }
+  }
+
+  &__item {
+    margin: 0 $gutter;
+    width: calc(100% - 3rem);
+    box-shadow: 2px 3px 3px rgba(20,19,20,.15);
+    transition: $hover-transition;
+    margin-bottom: rem(70);
+    @media (min-width: 768px) {
+      margin-bottom: rem(24);
+      flex: 0 1 calc(50% - #{$gutter} * 2);
+    }
+    flex-direction: column;
+    padding: rem(40) rem(30);
+    box-sizing: border-box;
+    height: rem(292);
+    position: relative;
+    &:hover {
+      transform: translateX(0) translateY(-1px);
+      box-shadow: 2px 4px 5px rgba(20, 19, 20, .25);
+      cursor: default;
+      .service__img {
+        transform: scale(1.01);
+      }
+
+    }
+
+    &--red {
+      background: $main;
+      color: #fff;
+    }
+    &--white {
+      background: #fff;
+    }
+  }
+  &__title {
+    font-family: $font-medium;
+    transform: translateZ(12px);
+    text-shadow: 1px 1px 3px rgba(0,0,0,.15);
+    font-size: rem(30);
+    line-height: rem(24);
+    margin-bottom: rem(26);
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    font-size: rem(12);
+    line-height: rem(20);
+    margin-bottom: rem(40);
+      white-space: unset;
+  }
+
+  &__link {
+    color: $main;
+    &--white {
+      color: #fff;
+    }
+  }
+
+  &__btn--right {
+    margin-right: 2rem;
+    margin-left: auto;
+  }
+  &__btn--left {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}

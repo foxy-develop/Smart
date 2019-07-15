@@ -1,0 +1,118 @@
+.form {
+  flex-direction: column;
+  max-width: rem(390);
+  width: 100%;
+  font-family: $font-regular;
+  color: $dark;
+  font-size: rem(16);
+  line-height: rem(22);
+
+  &__btn {
+    margin: 0 auto;
+    width: rem(200);
+    height: rem(50);
+    box-sizing: border-box;
+    border: 1px solid $main;
+    font-family: $font-regular;
+    color: $white;
+    border-radius: 8px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  &__warn {
+    display: none;
+    position: absolute;
+    bottom: -25px;
+    left: 8px;
+    font-size: 11px;
+    @media (min-width: 480px) {
+      font-size: 12px;
+    }
+    font-weight: 600;
+    color: rgb(255, 0, 0);
+  }
+  
+  &__group {
+    flex-direction: column;
+		position: relative;
+		padding-top: rem(20);
+    margin-top: rem(15);
+
+    &--error {
+      .form__warn {
+        display: flex;
+      }
+    }
+    &--success {
+      .form__field {
+        border-color: rgb(139, 195, 74);
+        &:focus {
+          outline: none;
+          border-color: rgb(139, 195, 74);
+          box-shadow: 0 1px 0 0 rgb(139, 195, 74);
+        }
+        &.active, &:focus {
+          & + .form__label {
+            color: rgb(139, 195, 74);
+            font-weight: 600;
+          }  
+        }
+      }
+    }
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    & > .form__label {
+      position: absolute;
+      top: rem(30);
+      left: rem(16);
+      transition: transform 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        cursor: text;
+      }
+    }
+  }
+
+  &__field {
+		border: none;
+		border-bottom: solid 1px $main;
+		width: 100%;
+    padding: rem(6) rem(16);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: transparent;
+    box-sizing: border-box;
+    &:focus {
+      outline: none;
+      border-color: $main;
+      box-shadow: 0 1px 0 0 $main;
+      & + .form__label {
+        color: $main;
+      }   
+    }
+
+    &.active, &:focus {
+      & + .form__label {
+        font-size: rem(14);
+        transform: translateY(-28px) translateX(-16px);
+      }
+    }
+  }
+  &__textarea {
+    margin-top: rem(5);
+    padding: rem(14) rem(16);
+    border: 1px solid $main;
+    border-radius: 6px;
+    
+    &:focus {
+      box-shadow: 0 0 0 1px rgb(232, 33, 39);
+    }
+  }
+}
+
+
+

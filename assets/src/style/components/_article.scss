@@ -1,0 +1,116 @@
+.article {
+  background: url(../../img/smart-roadster-1140x500.jpg);
+  background-size: cover;
+  height: rem(500);
+  line-height: rem(24);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: rem(46);
+  padding: 1rem;
+  box-sizing: border-box;
+  &__header {
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: rem(485);
+    width: 100%;
+    background: rgba(27, 27, 27, 0.8);
+    color: #fff;
+    padding: rem(76) rem(20);
+    align-items: center;
+    box-sizing: border-box;
+  }
+  &__theme {
+    font-family: $font-medium;
+    font-size: rem(40);
+    color: $main;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: rem(20);
+  }
+  &__date {
+    font-family: $font-regular;
+    font-size: rem(18);
+    margin-bottom: rem(30);
+  }
+  &__tags {
+    flex-direction: row;
+    margin-bottom: rem(25);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &__tag {
+    margin: 0 rem(10);
+    margin-bottom: rem(15);
+    font-family: $font-regular;
+    font-size: rem(16);
+    height: rem(30);
+    width: rem(67);
+    box-sizing: border-box;
+    padding: rem(10);
+    border: 1px solid $main;
+    border-radius: 4px;
+    align-items: center; 
+    justify-content: center;
+    transition: $hover-transition;
+    &:hover {
+      color: #fff;
+      background: $main;
+      cursor: default;
+    }
+  }
+  &__title {
+    font-family: $font-medium;
+    font-size: rem(30);
+    line-height: rem(36);
+    text-transform: uppercase;
+    font-weight: 600;
+    @media (min-width: 360px) {
+      line-height: rem(24);
+    }
+  }
+  &__content {
+    display: block;
+    max-width: rem(1005);
+    margin: 0 auto;
+    font-family: $font-regular;
+    font-size: rem(16);
+    line-height: rem(22);
+    font-weight: 400;
+    margin-bottom: rem(50);
+    & > * {
+      margin: 0 rem(30);
+    }
+    p {
+      margin-bottom: rem(22);
+      box-sizing: border-box;
+      
+    }
+    img {
+      height: auto;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      margin-bottom: rem(20);
+      padding: 0 rem(30);
+      box-sizing: border-box;
+      transform: translateZ(12px);
+      box-shadow: 2px 3px 4px rgba(0, 0, 0, .2);
+      transition: $hover-transition;
+      &:hover {
+        transform: scale(1.0125);
+        filter: drop-shadow(2px 4px 6px rgba(0,0,0,.3)) sepia(.4);
+      }
+      @media (min-width: 768px) {
+        padding: 0;
+        width: auto;
+        margin: 0 rem(30);
+        margin-bottom: rem(24);
+      }
+      
+      
+
+    }
+  }
+}

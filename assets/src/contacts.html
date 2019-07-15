@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  //= template/head.html
+</head>
+
+<body>
+  //= template/header.html
+  <main class="main">
+    <section class="contact">
+      <div class="container">
+        <h1 class="contact__title">
+          Контакты
+        </h1>
+
+        <div class="contact__wrapper">
+          <div class="contact__info contact__block">
+            <div class="contact__data">
+              <address class="contact__address">
+                г. Киев, ул. Центральная, д. 455
+              </address>
+              <div class="contact__phone">
+                Телефон: <a class="contact__link contact__link--pc" href="callto:380993453434" title="Позвонить"> +38 (099) 345-34-34</a> <a class="contact__link contact__link--mobile" href="tel:380993453434" title="Позвонить"> +38 (099) 345-34-34</a>
+              </div>
+              <div class="contact__email">
+                E - mail: <a class="contact__link" href="mailto:smartroad@gmail.com" title="Написать нам"> smartroad@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact__map">
+              <iframe class="contact__frame"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20297.355625124128!2d30.773840439550778!3d50.51241379999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1562460000294!5m2!1sru!2sua"
+                width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="contact__form contact__block">
+            <div class="contact__form-title">
+              Свяжитесь с нами
+            </div>
+            //= template/form.html
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  //= template/footer.html
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

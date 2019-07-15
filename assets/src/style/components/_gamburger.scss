@@ -1,0 +1,45 @@
+.nav-btn {
+  display: block;
+  position: relative;
+  width: rem(38);
+  height: rem(28);
+  outline: none;
+  background: rgba(0, 0, 0, 0);
+  span, &:before, &:after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: rem(4);
+    right: 0;
+    background: $main;
+    transition: $hover-transition;
+  }
+  span {
+    top: calc(50% - 2px);
+  }
+  &:before, &:after {
+    content: "";
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
+  &--active {
+    span {
+      opacity: 0;
+    }
+    &:before {
+      top: rem(12);
+      transform: rotate(45deg);
+    }
+    &:after {
+      bottom: rem(13);
+      transform: rotate(-45deg);
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

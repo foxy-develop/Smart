@@ -1,0 +1,29 @@
+.main {
+  flex-direction: column;
+  background: $grey;
+  margin-top: rem(100);
+  @media (min-width:1024px) {
+    margin-top: 0;
+  }
+}
+
+.container {
+  @include flex(row, unset, unset);
+  max-width: $container-width;
+  width: 100%;
+  padding: 0 $gutter;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.layout {
+  &--mb {
+    margin-bottom: rem(56);
+  }
+  &--column {
+    flex-direction: column;
+  }
+}
+.accent {
+  color: $main;
+}

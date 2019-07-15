@@ -1,0 +1,45 @@
+.seo {
+  white-space: normal;
+  @media (min-width: 375px) and (orientation: portrait) {
+    white-space: pre-line;
+  }
+  @media (min-width: 768px) and (orientation: landscape) {
+    white-space: pre-line;
+  }
+  &__h1 {
+    font-family: $font-bold;
+    font-size: rem(70);
+    line-height: rem(59);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $main;
+    margin-bottom: 2rem;
+    @media (min-width: 375px) {
+      font-size: rem(86);
+    }
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+    &--add {
+      font-family: $font-medium;
+      font-weight: 600;
+      font-size: rem(45);
+      line-height: rem(50);
+    @media (min-width: 375px) {
+        font-size: rem(55);
+      }
+    }
+  }
+  &__text {
+      font-family: $font-regular;
+      font-size: rem(16);
+      line-height: rem(28);
+      margin-bottom: 2rem;
+      white-space: normal;
+      text-shadow: -1px 1px 0px #f5f3f4de;
+      @media (min-width: 768px) {
+        white-space: pre-line;
+        
+      }
+  }
+}

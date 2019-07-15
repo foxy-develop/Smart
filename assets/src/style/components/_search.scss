@@ -1,0 +1,64 @@
+.search {
+  width: 100%;
+  justify-content: flex-end;
+  position: absolute;
+  overflow: hidden;
+  width: rem(35);
+  right: rem(-8);
+  transition: $hover-transition;
+  z-index: 2;
+  &:hover {
+    width: calc(100vw - 1rem);
+    transform: translateX(6rem);
+
+    @media (min-width: 768px) {
+      width: rem(320);
+      transform: translateX(0);
+    }
+    & > .search__btn {
+      background: $main;
+      fill: $white;
+    }
+    & > .search__input {
+      width: 95%;
+      @media (min-width: 768px) {
+        width: rem(290);
+      }
+      padding: 1rem 2rem;
+      border-color: $main;
+      border-width: 2px;
+    }
+  }
+  &__btn {
+    box-sizing: border-box;
+    position: relative;
+    padding: rem(8);
+    fill: $main;
+    width: rem(35);
+    height: rem(35);
+    bottom: 0;
+    right: 0;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    transition: $hover-transition;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  &__input {
+    overflow: hidden;
+    outline: none;
+    position: absolute;
+    bottom: 0;
+    font-size: 14px;
+    z-index: 1;
+    padding: 1rem 0;
+    box-sizing: border-box;
+    height: rem(35);
+    right: rem(14);
+    border: 0 solid transparent;
+    border-radius: 12px;
+    width: 0;
+    transition: $hover-transition;
+  }
+}
