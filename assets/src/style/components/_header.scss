@@ -12,7 +12,9 @@
   left: 0;
   border-bottom: 1px solid $main;
   z-index: 15;
-  transform: translateZ(15px);
+  transform: translate3d(0,0,15px);
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   @media (min-width:1024px) {
     position: relative;
     border-bottom: none;

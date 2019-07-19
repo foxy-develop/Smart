@@ -120,9 +120,17 @@ if (document.querySelectorAll('.form').length) {
     inputs.length && inputs.forEach(el => el.addEventListener("blur", () => leaveInput(el)));
 }
 
-document.querySelector(".nav-btn").addEventListener("click", function() {
-  this.classList.toggle("nav-btn--active");
-  document.querySelector(".navbar").classList.toggle("navbar--active");
+const navBtn = document.querySelector(".nav-btn")
+
+navBtn.addEventListener("click", () => {
+  navBtn.classList.toggle("nav-btn--active");
+  navbar.classList.toggle("navbar--active");
+  document.body.classList.toggle("no-scroll");
+
+  if (navbar.classList.contains("navbar--active")) 
+    navbarOpen
+      .to(header.header, 0.25, { width: window.innerWidth }, 0.25)
+      .staggerFromTo(header.navLinks, 0.3, { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1 }, 0.25);
 });
 
 

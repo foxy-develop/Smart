@@ -6,19 +6,27 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: fixed;
-  min-height: 100vh;
+  min-height: 101vh;
   width: 100%;
-  line-height: 4.5;
+  line-height: 4;
   font-size: rem(20);
   top: 8rem;
   right: 0;
+  bottom:0;
+
   border-top: 2px solid $main;
   justify-content: center;
   background: #fff;
-  transform: translateX(100%);
+  transform: translate3d(100%,0,0);
   transition: $hover-transition;
   box-sizing: border-box;
   padding-top: 3rem;
+
+
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+
   @media (min-width: 768px) { 
     min-height: 100vh;
     top: 0;
@@ -87,7 +95,7 @@
       outline: none;
 
       &:after {
-        transform: translateX(0) scale(1);
+        transform: translate3d(0,0,0) scale(1);
       }
 
     }
@@ -174,13 +182,14 @@
 }
 
 //landscape for phones
- .navbar {
+ .header .navbar {
    @media only screen 
     and (orientation: landscape)
     and (min-device-width: 320px) 
     and (max-device-width: 736px)  { 
     min-height: calc(100vh - 8rem);
     &__list {
+      font-size: rem(18);
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;

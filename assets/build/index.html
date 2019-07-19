@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no, minimal-ui">
     <title>Smart Roadster</title>
     <meta name="description" content="Smart Roadster" />
     
@@ -35,7 +35,7 @@
             <div class="header__logo">
               <a href="/" class="logo"><span class="logo__accent">Smart</span> Roadster</a>
             </div>
-            <nav class="navbar">
+            <nav class="header__navbar navbar">
               <ul class="navbar__list">
                 <li class="navbar__item navbar__item--active"><a href="index.html" class="navbar__link">Тюнинг</a></li>
                 <li class="navbar__item"><a href="article.html" class="navbar__link">Ремонт</a></li>
@@ -44,6 +44,7 @@
                 <li class="navbar__item"><a href="contacts.html" class="navbar__link">Контакты</a></li>
               </ul>
             </nav>
+        
             <div class="header__search">
               <div class="search">
                 <button class="search__btn" aria-label="search" title="Search!">
@@ -117,9 +118,7 @@
             <section class="search-article layout--mb">
               <div class="container">
                 <div class="search-article__title">
-                  <span class="search-article__text">
-                    Поиск статей
-                  </span> 
+                  <span class="search-article__text">Поиск статей</span> 
                 </div>
                 <div class="search-article__form">
                   <button class="search-article__btn" aria-label="Искать">
@@ -163,7 +162,7 @@
                   </button>
                   <div class="search-article__search">
                     <input type="text" class="search-article__input" placeholder="Введите ключевое слово" aria-label="Введите ключевое слово">
-                  </div>
+                  </div>  
                 </div>
               </div>
             </section>
@@ -235,29 +234,34 @@
                 </div>
               </div>
             </section>
-            <div class="service">
-              <div class="service__item service__item--red">
-                <div class="service__title">Тюнинг крыла</div>
-                <div class="service__desc">
-                  Равным образом дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации соответствующий.
+            
+            <section class="service">
+              <div class="container">
+                <div class="service__item service__item--red">
+                  <div class="service__title">Тюнинг крыла</div>
+                  <div class="service__desc">
+                    Равным образом дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации соответствующий.
+                  </div>
+                  <div class="service__link service__link--white">
+                    <a href="" class="articles__btn service__btn--right" title="Читать далее ">Читать далее</a>
+                  </div>
+                  <img src="../img/roadster-367x165.png" alt="Roadster" class="service__img service__img--left">
                 </div>
-                <div class="service__link service__link--white">
-                  <a href="" class="articles__btn service__btn--right" title="Читать далее ">Читать далее</a>
+                <div class="service__item service__item--white">
+                  <div class="service__title">Тюнинг крыла</div>
+                  <div class="service__desc">
+                    Равным образом дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации
+                    соответствующий.
+                    Дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации
+                    соответствующий.
+                  </div>
+                  <div class="service__link">
+                    <a href="" class="articles__btn service__btn--left" title="Читать далее ">Читать далее</a>
+                  </div>
+                  <img src="../img/roadster2-317x112.png" alt="Roadster" class="service__img service__img--right">
                 </div>
-                <img src="../img/roadster-367x165.png" alt="Roadster" class="service__img service__img--left">
               </div>
-              <div class="service__item service__item--white">
-                <div class="service__title">Тюнинг крыла</div>
-                <div class="service__desc">
-                  Равным образом дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации
-                  соответствующий.
-                </div>
-                <div class="service__link">
-                  <a href="" class="articles__btn service__btn--left" title="Читать далее ">Читать далее</a>
-                </div>
-                <img src="../img/roadster2-317x112.png" alt="Roadster" class="service__img service__img--right">
-              </div>
-            </div>
+            </section>
         </main>
         <footer class="footer">
           <div class="container">
@@ -277,5 +281,6 @@
         
         </footer>
         <script src="js/main.min.js"></script>
+
     </body>
 </html>

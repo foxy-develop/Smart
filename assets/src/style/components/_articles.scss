@@ -8,7 +8,7 @@
   &__list {
     flex-wrap: wrap;
     justify-content: stretch;
-      width: 100%;
+     flex: 1;
   }
   &__block-title {
     align-items: flex-start;

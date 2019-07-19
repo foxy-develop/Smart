@@ -1,8 +1,12 @@
 .main {
   flex-direction: column;
   background: $grey;
-  margin-top: rem(100);
+  margin-top: rem(80);
+  @media (min-width:768px) {
+    margin-top: rem(100);
+  }
   flex-grow: 1;
+
   @media (min-width:1024px) {
     margin-top: 0;
   }
@@ -15,6 +19,7 @@
   padding: 0 $gutter;
   margin: 0 auto;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .layout {
@@ -27,4 +32,25 @@
 }
 .accent {
   color: $main;
+}
+
+.layer {
+  position: fixed;
+  content: '';
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  top:0;
+  bottom: 0;
+  opacity: 0;
+  &--main-color {
+    background: rgba($main, 1);
+  }
+  &--grey-color {
+    background: rgba($grey, 1);
+  }
+  &--dark-color {
+    background: rgba($dark, 1);
+  }
 }

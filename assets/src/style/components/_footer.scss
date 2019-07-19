@@ -1,5 +1,8 @@
 .footer {
-  height: rem(90);
+  height: rem(100);
+  @media (min-width:768px) {
+    height: rem(90);
+  }
   border-top: 1px solid $main;
   border-bottom: 1px solid $main;
   box-sizing: border-box;

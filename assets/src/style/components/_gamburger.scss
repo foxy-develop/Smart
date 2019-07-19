@@ -1,21 +1,21 @@
 .nav-btn {
   display: block;
   position: relative;
-  width: rem(38);
-  height: rem(28);
+  width: rem(30);
+  height: rem(20);
   outline: none;
   background: rgba(0, 0, 0, 0);
   span, &:before, &:after {
     display: block;
     position: absolute;
     width: 100%;
-    height: rem(4);
+    height: rem(3);
     right: 0;
     background: $main;
     transition: $hover-cubic;
   }
   span {
-    top: calc(50% - 2px);
+    top: calc(50% - 1.5px);
   }
   &:before, &:after {
     content: "";
@@ -31,11 +31,11 @@
       opacity: 0;
     }
     &:before {
-      top: rem(12);
+      top: rem(8);
       transform: rotate(45deg);
     }
     &:after {
-      bottom: rem(13);
+      bottom: rem(9);
       transform: rotate(-45deg);
     }
   }
