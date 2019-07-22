@@ -365,12 +365,7 @@ navBtn.addEventListener("click", () => {
       .staggerFromTo(header.navLinks, 0.3, { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1 }, 0.25);
 });
 
-
-
-
-
-
 const sw = navigator.serviceWorker;
-sw.controller || sw.register("sw.js", { scope: "./" });
+sw.controller || sw.register('sw.js', {scope: './'});
 
 // Импортируем необходимые gsap
