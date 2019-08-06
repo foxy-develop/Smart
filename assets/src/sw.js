@@ -8,7 +8,8 @@ const staticContent = [
   "css/main.min.css",
   "css/main.min.css.map",
   "js/main.min.js",
-  "js/main.min.js.map"
+  "js/main.min.js.map",
+  "/"
 ];
 
 self.addEventListener('install', event => 
