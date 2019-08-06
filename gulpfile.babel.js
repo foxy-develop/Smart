@@ -30,6 +30,10 @@ const path = {
     img: "assets/build/img/",
     fonts: "assets/build/fonts/"
   },
+  gitPages: {
+    build: "assets/build/**/*.*",
+    ghPage: "docs/",
+  },
   src: {
     html: "assets/src/*.html",
     js: "assets/src/js/main.js",
@@ -192,6 +196,12 @@ gulp.task(
     "css:build"
   )
 );
+
+// gh-page
+gulp.task("git-pages", () => 
+  gulp.src(path.gitPages.build)
+      .pipe(gulp.dest(path.gitPages.ghPage)));
+
 
 // запуск задач при изменении файлов
 gulp.task("watch", () => {

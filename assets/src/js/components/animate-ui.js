@@ -50,7 +50,6 @@ if (document.querySelector(".hero")) {
     btn: ".hero__btn",
     caption: ".hero__caption"
   };
-
   heroBlock
     .delay(1.5)
     .fromTo(hero.caption,0.75,{ yPercent: 50, scaleY: 0},{ ease: Back.easeOut.config(1.5), yPercent: 7.5, scaleY: 1},0.25)
@@ -67,8 +66,8 @@ if (document.querySelector(".search-article")) {
   let block = document.querySelector(".search-article");
   let search = block.querySelector(".search-article__form");
 
-  articlesTl.delay(0.75).staggerFromTo(".search-article__title",0.5,{ opacity: 0, scaleY: 0 },{ ease: Power4.easeOut, opacity: 1, scaleY: 1 },0.75);
-  articlesTl.fromTo( search, .75, { xPercent: -50, scaleX: 0, opacity: 0, scaleY: 1}, { ease: Back.easeOut.config(1.125), scaleX: 1, xPercent: 0, opacity: 1});
+  articlesTl.delay(0.75).staggerFromTo(".search-article__title",0.25,{ opacity: 0, scaleY: 0 },{ ease: Power4.easeOut, opacity: 1, scaleY: 1 },0.5);
+  articlesTl.fromTo( search, 0.75, { xPercent: -50, scaleX: 0, opacity: 0, scaleY: 1}, { ease: Back.easeOut.config(1.125), scaleX: 1, xPercent: 0, opacity: 1});
   articlesTl.staggerFromTo(".articles__item", 0.25, { opacity: 0,x: 140}, { ease: Power3.easeOut,opacity: 1,x: 0 }, 0.25);
 
   var articlesScene = new ScrollMagic.Scene({triggerElement: block,triggerHook: 1}).setTween(articlesTl).addTo(articlesController);

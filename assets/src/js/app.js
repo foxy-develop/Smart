@@ -47,9 +47,7 @@ if (document.querySelectorAll('.form').length) {
     return !form.querySelectorAll(".form__group--error").length;
   };
 
-  const submit = document.querySelector(".form__btn");
-
-  submit.addEventListener('click', function() {
+  document.querySelector('form').addEventListener('submit', function() {
     event.preventDefault();
     const form = this.closest('.form');
     if (formValidate(form)) {
