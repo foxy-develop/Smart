@@ -1,7 +1,7 @@
 {
   "name": "Smart Roadster",
   "short_name": "Smart",
-  "start_url": "/",
+  "start_url": "/index.html",
   "theme_color": "#e82127",
   "background_color": "#000",
   "display": "fullscreen",

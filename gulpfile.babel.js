@@ -33,6 +33,7 @@ const path = {
   gitPages: {
     build: "assets/build/**/*.*",
     ghPage: "docs/",
+    clean: "./docs/*"
   },
   src: {
     html: "assets/src/*.html",
@@ -197,10 +198,10 @@ gulp.task(
   )
 );
 
-// gh-page
-gulp.task("git-pages", () => 
-  gulp.src(path.gitPages.build)
-      .pipe(gulp.dest(path.gitPages.ghPage)));
+// сборка github-pages
+gulp.task("git-pages:clean", () => gulp.src(path.gitPages.clean, { read: false }).pipe(rimraf()));
+gulp.task("git-pages:build", () => gulp.src(path.gitPages.build).pipe(gulp.dest(path.gitPages.ghPage)));
+gulp.task("git-pages", gulp.series("git-pages:clean", "git-pages:build")); 
 
 
 // запуск задач при изменении файлов
