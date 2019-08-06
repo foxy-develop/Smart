@@ -258,24 +258,24 @@ const notification = ( siiimpleToast =
       }));
 
 if (document.querySelectorAll('.form').length) {
-  
   //form validate
   const formValidate = form => {
     const email = form.querySelector('input[name="mail"]');
     const subject = form.querySelector('input[name="subject"]');
     const msg = form.querySelector("textarea");
+    const scc = "form__group--success";
+    const err = "form__group--error";
+    const group = ".form__group";
 
-    const error = elem => 
-      elem.closest(".form__group").classList.add("form__group--error");
-    const success = elem => 
-      elem.closest(".form__group").classList.add("form__group--success");
+    const error = elem => elem.closest(group).classList.add(err);
+    const success = elem => elem.closest(group).classList.add(scc);
 
     //validate
     validateEmail(email.value) ? success(email) : error(email);
     subject.value.length > 5 ? success(subject) : error(subject);
     msg.value.length >= 60 ? success(msg) : error(msg);
 
-    return !form.querySelectorAll(".form__group--error").length;
+    return !form.querySelectorAll(`.${err}`).length;
   };
 
   document.querySelector('form').addEventListener('submit', function() {
